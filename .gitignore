@@ -1,0 +1,158 @@
+## ASP.NET Core 10.0 .gitignore
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Visual Studio cache/options directory
+.vs/
+# Uncomment if your build generates static files in wwwroot
+#wwwroot/
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.history/
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+
+# Benchmark Results
+BenchmarkDotNet.Artifacts/
+
+# SDK / Solution files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+mono_crash.*
+
+# HTTP request files (VS / REST Client)
+*.http
+
+# NuGet
+*.nupkg
+*.snupkg
+*.symbols.nupkg
+packages/
+!packages/build/
+*.nuget.props
+*.nuget.targets
+
+# Published output
+publish/
+
+# User secrets — NEVER commit these
+secrets.json
+appsettings.Development.json
+appsettings.Local.json
+
+# SSL / HTTPS development certificates
+*.pfx
+localhost.pfx
+aspnetapp.pfx
+
+# Entity Framework
+*.Designer.cs
+
+# Docker
+.dockerignore
+
+# Node / Frontend tooling
+node_modules/
+bower_components/
+
+# Coverage & mutation testing
+coverage/
+coverage.xml
+*.coverage
+*.coveragexml
+lcov.info
+StrykerOutput/
+
+# Playwright
+playwright-report/
+test-results/
+
+# Swagger (if auto-generated)
+swagger.json
+
+# SQL Server files
+*.mdf
+*.ldf
+*.ndf
+
+# MSBuild logs
+*.binlog
+
+# Paket
+.paket/paket.exe
+paket-files/
+
+# FAKE - F# Make
+.fake/
+
+# Fody
+FodyWeavers.xsd
+
+# Local history
+.localhistory/
+.vshistory/
+
+# Health checks temp db
+healthchecksdb
+
+# Package reference migration backup
+MigrationBackup/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
