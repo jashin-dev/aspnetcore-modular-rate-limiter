@@ -1,4 +1,5 @@
 ﻿using AspNetCore.ModularRateLimiter.Api.Configuration;
+using System.Text.Json;
 
 namespace AspNetCore.ModularRateLimiter.Api.Extensions
 {
@@ -13,6 +14,15 @@ namespace AspNetCore.ModularRateLimiter.Api.Extensions
         public static IServiceCollection AddApiDocumentation(this IServiceCollection services)
         {
             services.AddOpenApi();
+            return services;
+        }
+
+        public static IServiceCollection AddHttpJsonConfiguration(this IServiceCollection services)
+        {
+            services.ConfigureHttpJsonOptions(options =>
+            {
+                options.SerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+            });
             return services;
         }
     }

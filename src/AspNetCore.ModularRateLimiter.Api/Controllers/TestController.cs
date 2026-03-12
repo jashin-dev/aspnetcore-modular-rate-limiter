@@ -8,8 +8,10 @@ namespace AspNetCore.ModularRateLimiter.Api.Controllers
     public class TestController : ControllerBase
     {
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
+            await Task.Delay(2000);
+
             var result = new ApiResponse
             {
                 Success = true,
@@ -17,6 +19,7 @@ namespace AspNetCore.ModularRateLimiter.Api.Controllers
                 Timestamp = DateTime.Now,
                 Path = HttpContext.Request.Path
             };
+
             return Ok(result);
         }
     }

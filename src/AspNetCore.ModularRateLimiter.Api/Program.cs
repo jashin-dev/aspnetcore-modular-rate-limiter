@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRateLimiterConfiguration(builder.Configuration);
 builder.Services.AddApiDocumentation();
 builder.Services.AddControllers();
+builder.Services.AddHttpJsonConfiguration();
 
 var app = builder.Build();
 
