@@ -43,6 +43,9 @@ namespace AspNetCore.ModularRateLimiter.Api.Middleware
                 _logger.LogWarning("Rate limit exceeded for IP {IP}", ip);
                 context.Response.StatusCode = (int)HttpStatusCode.TooManyRequests;
 
+                int retryAfterSeconds = _limiter.GetRetryAfterSeconds();
+                context.Response.Headers.RetryAfter = retryAfterSeconds.ToString();
+
                 var response = new ApiResponse
                 {
                     Success = false,
