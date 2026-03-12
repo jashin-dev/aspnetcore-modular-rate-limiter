@@ -6,6 +6,7 @@ namespace AspNetCore.ModularRateLimiter.Api.Algorithms
     public class LeakyBucketLimiter : IRateLimiterStrategy
     {
         private readonly ConcurrencyLimiter _limiter;
+        private const int DefaultRetryAfterSeconds = 5;
 
         public LeakyBucketLimiter(int permitLimit, int queueLimit)
         {
@@ -20,6 +21,11 @@ namespace AspNetCore.ModularRateLimiter.Api.Algorithms
         public Task<RateLimitLease> AcquireAsync(int permits = 1)
         {
             return _limiter.AcquireAsync(permits).AsTask();
+        }
+
+        public int GetRetryAfterSeconds()
+        {
+            return DefaultRetryAfterSeconds;
         }
     }
 }
